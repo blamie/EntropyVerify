@@ -1,0 +1,29 @@
+# Rust build artifacts
+target/
+
+# Local configuration/credentials
+.cargo/config.toml.local
+
+# Backup files
+*.rs.bk
+
+# Generated test chunks
+**/ev_chunk_*.bin
+**/.entropy_verify_sentinel
+
+# Generated test reports
+**/entropy_verify_report_*.md
+
+# Temporary test folders
+**/test_vol/
+**/test_dir/
+
+# Archives
+*.rar
+*.zip
+*.tar.gz
+
+# VS Code workspace settings
+*.code-workspace
+.vscode/
+

@@ -1,8 +1,8 @@
 # EntropyVerify (EVFY)
 
-**EntropyVerify** is a modern, high-performance, open-source storage validation utility. It serves as an ultra-fast, cross-platform alternative to legacy tools like H2testw, written in Rust and optimized specifically for modern high-speed PCIe 4.0/5.0 NVMe SSDs, USB drives, and SD cards.
+**EntropyVerify** is a high-performance, open-source storage validation utility. It serves as an ultra-fast alternative to legacy tools like H2testw, written in Rust and optimized specifically for modern high-speed PCIe 4.0/5.0 NVMe SSDs but it works with any drive.
 
-The primary objective of EntropyVerify is to provide **absolute accuracy** in verifying real storage capacity while safely maximizing the physical read/write throughput of high-speed flash storage.
+The primary goal  of EntropyVerify is to provide absolute accuracy in verifying real storage capacity while safely maximizing the physical read/write throughput of high-speed storage.
 <img width="1115" height="628" alt="Screenshot 2026-06-23 012456" src="https://github.com/user-attachments/assets/cf548a6e-4206-40ce-af28-0dab3ef5d724" />
 
 ---
@@ -28,7 +28,7 @@ The primary objective of EntropyVerify is to provide **absolute accuracy** in ve
   * When run without arguments (e.g., double-clicking the `.exe` in Windows Explorer), the tool automatically falls back to an interactive prompt mode asking for the target directory, and holds the command prompt open upon exit (`Press Enter to exit...`) so results can be reviewed.
 * **Persistent Markdown Reports**:
   * Generates a persistent verification report `entropy_verify_report_YYYYMMDD_HHMMSS.md` on the target volume containing filesystem information, comprehensive phase speeds, peak transfer rates, and precise block corruption offset logs.
-  * **Auto-Cleanup**: Automatically cleans up all chunk files (`ev_chunk_*.bin`) upon a 100% successful validation pass, but retains them on block mismatch to enable forensic/hex-editor analysis.
+  * **Auto-Cleanup**: Automatically cleans up all chunk files (`ev_chunk_*.bin`) upon a 100% successful validation pass, but retains them on block mismatch to enable analysis.
 
 ---
 
@@ -62,7 +62,7 @@ Each 2 MiB block has the following binary layout:
 
 ### Building from Source
 
-To build a production-optimized release binary:
+To build a release binary:
 
 ```bash
 # Clone the repository

@@ -3,6 +3,7 @@
 **EntropyVerify** is a modern, high-performance, open-source storage validation utility. It serves as an ultra-fast, cross-platform alternative to legacy tools like H2testw, written in Rust and optimized specifically for modern high-speed PCIe 4.0/5.0 NVMe SSDs, USB drives, and SD cards.
 
 The primary objective of EntropyVerify is to provide **absolute accuracy** in verifying real storage capacity while safely maximizing the physical read/write throughput of high-speed flash storage.
+<img width="1115" height="628" alt="Screenshot 2026-06-23 012456" src="https://github.com/user-attachments/assets/cf548a6e-4206-40ce-af28-0dab3ef5d724" />
 
 ---
 

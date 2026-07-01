@@ -1,0 +1,6 @@
+# Enable hardware AES-NI and SSE4.1 for maximum AES-CTR throughput.
+# This is a hard requirement — the resulting binary will NOT run on CPUs
+# without AES-NI (i.e., pre-2010 architectures).
+
+[target.'cfg(target_arch = "x86_64")']
+rustflags = ["-C", "target-feature=+aes,+sse4.1"]

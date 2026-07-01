@@ -1,0 +1,72 @@
+[package]
+name = "entropy_verify"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Ultra-fast cross-platform storage validation utility — a modern alternative to H2testw using entropy metrics"
+license = "AGPL-3.0-only"
+readme = "README.md"
+keywords = ["storage", "validation", "nvme", "benchmark", "entropy"]
+categories = ["command-line-utilities", "filesystem"]
+
+[dependencies]
+# TUI
+ratatui = { version = "0.29", features = ["crossterm"] }
+crossterm = "0.28"
+
+# Cryptography
+blake3 = "1.5"
+aes = "0.8"
+ctr = "0.9"
+cipher = "0.4"
+
+# Randomness
+rand = "0.8"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# Time
+chrono = { version = "0.4", features = ["clock"] }
+
+# Concurrency
+crossbeam-channel = "0.5"
+num_cpus = "1"
+
+# Zero-copy serialization
+bytemuck = { version = "1", features = ["derive"] }
+
+# System info
+sysinfo = "0.32"
+
+# Graceful shutdown
+ctrlc = { version = "3", features = ["termination"] }
+
+# CPU affinity
+core_affinity = "0.8"
+
+# Error handling
+anyhow = "1"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-sys = { version = "0.52", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_IO",
+    "Win32_System_Memory",
+] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+io-uring = "0.6"
+libc = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[profile.dev]
+opt-level = 1
